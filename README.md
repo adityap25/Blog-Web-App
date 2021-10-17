@@ -1,3 +1,3 @@
 # Blog-Web-App
 
-Deployement: [AP blog](https://ap-django-blog.herokuapp.com/)
+Deployement: [AP Blog](https://ap-django-blog.herokuapp.com/)
