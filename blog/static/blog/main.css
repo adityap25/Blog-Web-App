@@ -47,6 +47,7 @@ body {
   
   .article-content {
     white-space: pre-line;
+    overflow: hidden;
   }
   
   .article-img {
