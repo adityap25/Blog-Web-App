@@ -15,6 +15,19 @@ from pathlib import Path
 
 from django.contrib.auth import login
 import django_heroku
+
+
+#cloud deployment
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+CLOUDINARY_STORAGE={
+  'CLOUD_NAME':"apcc25", 
+  'API_KEY' :os.environ.get('API_KEY'), 
+  'API_SECRET' : os.environ.get('API_SECRET'),
+}
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -42,6 +55,9 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
+    'cloudinary_storage',
+    'cloudinary',
+    
 ]
 
 MIDDLEWARE = [
@@ -148,3 +164,4 @@ EMAIL_HOST_PASSWORD=os.environ.get('DB_EMAIL_PASS')
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 django_heroku.settings(locals())
+
